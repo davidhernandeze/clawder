@@ -33,6 +33,9 @@
 - **Session length**: 8-15 min max. Looks like a real break.
 - **Time of day**: Realistic browsing hours only (no 3 AM)
 - **Skip pattern**: Skip every 3rd/4th post/story naturally
+- **Like pattern**: 1-3 non-event likes + 1-2 event likes from unfollowed accounts per session
+- **Follow pattern**: Max 1-2 new follows per session, near the end
+- **Story reaction**: 1 heart tap on a story per session
 - **Session rotation**: Account rotation if multiple accounts configured
 
 ### Event Data Model

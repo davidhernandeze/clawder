@@ -32,7 +32,11 @@
 - IG credentials from `IG_USERNAME` / `IG_PASSWORD` env variables (passed via docker-compose)
 
 ## Key Decisions
-- **Don't interact on Instagram** — observe and extract only
+- **Don't engage via comments/DM** — like and follow only, never text interaction
+- **Follow strategically** — max 1-2 new venue/promoter accounts per session, near the end
+- **Like naturally** — 1-3 non-event posts + 1-2 event posts from unfollowed accounts per session; spread across session
+- **Story react** — 1 heart tap per session on relevant stories, rotated across accounts
+- **Relevance filter** — date/time/countdown/venue tags = event; food photos/staff selfies/memes = skip
 - **Vary everything** — timing, scroll patterns, click positions, session fingerprints
 - **Image input enabled** on DeepSeek V4 Flash model config
 - **Config is templatized** — secrets use `${VARS}` so the project can be committed safely
