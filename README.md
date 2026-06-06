@@ -1,9 +1,15 @@
 # clawder — Kasm desktop + OpenClaw sandbox
 
+# 🧭 Clawder — Kasm desktop + OpenClaw sandbox
+
 A single-container **Kasm Workspace** Linux desktop (Ubuntu 22.04 / XFCE on the multi-arch
 `kasmweb/ubuntu-jammy-desktop` base — builds natively on Apple Silicon, streamed to your
 browser over KasmVNC) with the [OpenClaw](https://github.com/openclaw/openclaw)
 computer-use agent built in and running **inside** the desktop session.
+
+This repo is pre-configured for **undetectable Instagram data collection** using the
+**Rook 🧭** agent persona — a humanized, strategic browser agent that reads images,
+varies its patterns, and avoids bot detection.
 
 ## Why this shape
 
@@ -91,6 +97,10 @@ Both versions are build args (override in `.env` or on the CLI):
 ## Files
 
 ```
+config/                        ← Rook agent config + workspace for replication
+  README.md                    ← how to replicate the agent environment
+  workspace/                   ← SOUL.md, IDENTITY.md, AGENTS.md, TOOLS.md, etc.
+  gateway/                     ← templatized gateway configs (openclaw.json, auth)
 docker/
   Dockerfile                  # Kasm desktop + Node 24 + OpenClaw build
   startup/

@@ -28,6 +28,8 @@ services:
       # Persist OpenClaw config, workspace, and auth secrets across rebuilds.
       - ./data/openclaw:/home/kasm-user/.openclaw
       - ./data/config:/home/kasm-user/.config/openclaw
+      # Mount agent config/workspace templates so the startup script can deploy them.
+      - ./config:/opt/clawder/config:ro
     shm_size: "1gb"     # Chromium inside the desktop needs shared memory
     extra_hosts:
       # Reach a local Ollama / LM Studio running on the host.

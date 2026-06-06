@@ -7,9 +7,18 @@ set -euo pipefail
 APP_DIR=/opt/openclaw
 CONFIG_DIR="${OPENCLAW_CONFIG_DIR:-$HOME/.openclaw}"
 LOG="$CONFIG_DIR/gateway.log"
+WORKSPACE="$CONFIG_DIR/workspace"
+CLAWDER_CONFIG=/opt/clawder/config
 
 mkdir -p "$CONFIG_DIR"
 cd "$APP_DIR"
+
+# ---- Deploy Rook workspace templates on first run ----
+if [ -d "$CLAWDER_CONFIG/workspace" ] && [ ! -f "$WORKSPACE/.rook-deployed" ]; then
+  echo "[start-openclaw] deploying Rook workspace from $CLAWDER_CONFIG/workspace..." | tee -a "$LOG"
+  cp -r "$CLAWDER_CONFIG/workspace/"* "$WORKSPACE/" 2>/dev/null || true
+  touch "$WORKSPACE/.rook-deployed"
+fi
 
 # The gateway port (18789) is published to the host, so it must bind a non-loopback
 # address — and OpenClaw refuses that without auth. A password is required.
