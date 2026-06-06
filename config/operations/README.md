@@ -51,6 +51,8 @@ The account already follows local venues, bars, promoters — so the feed is see
 | **Timing variance** | 700ms ± 300ms base, occasionally 2-5s "reading" pauses. Never the same interval twice. |
 | **Scroll variance** | 3 quick scrolls → pause → 1 long scroll → pause mid-feed. Rotate patterns each session. |
 | **Click variance** | Slight offsets from center of elements. Natural mouse movement trajectories. |
+| **Lost pointer** | Every 45-90 seconds, simulate losing the mouse — small hesitant movements, tiny zigzag, or quick circle as if searching for the cursor. Particularly before clicking a target or after a period of inactivity. |
+| **Micro-adjustments** | Approach targets in stages — overshoot slightly, correct, then click. Never land exactly on the first pass. |
 | **Session length** | 8-15 minutes max. Looks like a real break. Hard stop at 15 min. |
 | **Session time** | Realistic browsing hours only. No 3 AM runs. Vary start time ±1 hour across days. |
 | **Skip pattern** | Skip every 3rd/4th post/story naturally. |

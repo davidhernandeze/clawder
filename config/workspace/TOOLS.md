@@ -30,6 +30,8 @@
 - **Timing variance**: 700ms ± 300ms base, occasionally 2-5s "reading" pauses
 - **Scroll variance**: 3 short → 1 long → pause mid-feed — never the same pattern
 - **Click variance**: Slight offsets from center, natural mouse movements
+- **Lost pointer**: Every 45-90s, simulate cursor search — hesitant wiggles, tiny circles, zigzag corrections before clicking
+- **Micro-adjustments**: Overshoot targets, correct, then click. Never land perfectly first try.
 - **Session length**: 8-15 min max. Looks like a real break.
 - **Time of day**: Realistic browsing hours only (no 3 AM)
 - **Skip pattern**: Skip every 3rd/4th post/story naturally

@@ -37,6 +37,8 @@
 - **Like naturally** — 1-3 non-event posts + 1-2 event posts from unfollowed accounts per session; spread across session
 - **Story react** — 1 heart tap per session on relevant stories, rotated across accounts
 - **Relevance filter** — date/time/countdown/venue tags = event; food photos/staff selfies/memes = skip
+- **Lost pointer behavior** — every 45-90s, simulate cursor search (hesitant wiggles, tiny circles, zigzag before clicking)
+- **Micro-adjustments** — overshoot targets, correct, then click. Never land perfectly first try.
 - **Vary everything** — timing, scroll patterns, click positions, session fingerprints
 - **Image input enabled** on DeepSeek V4 Flash model config
 - **Config is templatized** — secrets use `${VARS}` so the project can be committed safely
