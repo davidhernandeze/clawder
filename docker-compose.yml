@@ -24,6 +24,11 @@ services:
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-}
+      # Instagram credentials for Rook data collection
+      IG_USERNAME: ${IG_USERNAME:-}
+      IG_PASSWORD: ${IG_PASSWORD:-}
+      IG_USERNAME_2: ${IG_USERNAME_2:-}
+      IG_PASSWORD_2: ${IG_PASSWORD_2:-}
     volumes:
       # Persist OpenClaw config, workspace, and auth secrets across rebuilds.
       - ./data/openclaw:/home/kasm-user/.openclaw
