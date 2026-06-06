@@ -1,0 +1,7 @@
+data/
+.idea/
+.git/
+.gitignore
+*.log
+src/
+README.md

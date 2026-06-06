@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=OpenClaw Gateway
+Comment=Start the OpenClaw computer-use agent gateway inside this desktop
+Exec=/usr/local/bin/start-openclaw.sh
+Terminal=false
+X-GNOME-Autostart-enabled=true

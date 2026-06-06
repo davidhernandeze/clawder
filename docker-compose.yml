@@ -1,0 +1,35 @@
+services:
+  kasm-openclaw:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        KASM_TAG: ${KASM_TAG:-1.17.0}
+        OPENCLAW_IMAGE: ${OPENCLAW_IMAGE:-ghcr.io/openclaw/openclaw:latest}
+    image: clawder/kasm-openclaw:latest
+    container_name: clawder-kasm-openclaw
+    ports:
+      - "6901:6901"     # Kasm desktop, HTTPS (self-signed) — login: kasm_user
+      - "18789:18789"   # OpenClaw gateway UI
+    environment:
+      # Kasm desktop password (user is always `kasm_user`).
+      VNC_PW: ${VNC_PW:-password}
+      # The container is the sandbox; run OpenClaw unsandboxed inside it.
+      OPENCLAW_SANDBOX: "none"
+      # Password to log into the OpenClaw gateway UI (required: the gateway refuses
+      # to bind the published port 18789 without auth).
+      OPENCLAW_GATEWAY_PASSWORD: ${OPENCLAW_GATEWAY_PASSWORD:-clawder}
+      # LLM provider credentials — set whichever you use in .env (see .env.example).
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-}
+    volumes:
+      # Persist OpenClaw config, workspace, and auth secrets across rebuilds.
+      - ./data/openclaw:/home/kasm-user/.openclaw
+      - ./data/config:/home/kasm-user/.config/openclaw
+    shm_size: "1gb"     # Chromium inside the desktop needs shared memory
+    extra_hosts:
+      # Reach a local Ollama / LM Studio running on the host.
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
